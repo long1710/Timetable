@@ -1,0 +1,23 @@
+Outliner
+Purpose:
+  Creating a web application that allows user to input a series of action and priority in order to create perfect timetable
+  
+Deadlines ( this project is due in 5 weeks ) 
+
+Requirements: 
+1/ username, password ( *TODO ) 
+ purpose: store the type of timetables
+ 
+2/ GUI 
+  a/page 1: Introduction ( GET STARTED button ) 
+  b/page 2: Question: A series of question to ask the user input and priority of action
+  c/page 3: Result of multiple timetables ( with explanation if possible ), return to page 2 and print
+  
+3/ Database ( MySQL )
+  a/ Storing file of the question and priority
+ 
+4/ Node JS ( or equivalent )
+  Communicate between user and their previous save file 
+  
+
+ 
