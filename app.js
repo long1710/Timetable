@@ -1,15 +1,17 @@
-var mysql = require('mysql');
-var express = require('express');
-var app = express();
+const mysql = require('mysql');
+const express = require('express');
+const app = express();
+var registration = require('./registration');
+app.use(express.urlencoded({extended: true}));
+app.use('/assets', express.static('assets'));
+
 
 //connect to mysql server
 var con = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'root',   
     password: '1234rewq'
 })
-
-
 //alter mysql server
 con.connect(function(err){
     if (err) throw err
@@ -36,4 +38,15 @@ app.get('/result', function(red, res){
     res.sendFile(__dirname + '/result.html');
 })
 
+//get the action and priority
+app.post('/process', function(req, res){
+    registration.dbDataTable(con, "Long")//try with one database first
+    registration.dbData(con, "Long", req.body.activities, req.body.priority)
+})
+
+//get the username and password
+app.post('/registration', function(req,res){
+    console.log(req.body);
+    registration.dbAccount(con, req.body.username, req.body.password);
+})
 app.listen(3000);
