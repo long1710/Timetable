@@ -14,7 +14,10 @@ function dbAccount(db, username, password){
 function dbDataTable(db, username){
     var sql = `CREATE TABLE IF NOT EXISTS timetable.${username} (
         activities varCHAR(255), 
-        priority INT
+        priority INT,
+        lunch varCHAR(255),
+        hygene INT,
+        sleep INT
     )`; //TODO ( need an else incase it does exist)
     db.query(sql, function(err){
         if(err) throw err
@@ -23,8 +26,8 @@ function dbDataTable(db, username){
 }
 
 //add activities and priority to database
-function dbData(db, username, activities, priority){
-    var sql = `INSERT INTO timetable.${username} (activities, priority) VALUES ('${activities}', '${priority}')`;
+function dbData(db, username, body){
+    var sql = `INSERT INTO timetable.${username} (activities, priority, lunch, hygene, sleep) VALUES ('${body.activities}', '${body.priority}', '${body.meal}','${body.sleep}','${body.hygene}')`;
     db.query(sql, function(err){
         if(err) throw err
         console.log('succeed addting activities to account');

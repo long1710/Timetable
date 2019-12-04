@@ -7,16 +7,30 @@
     <h4>To start generating the perfect time table, please give us some detail about your activities</h4>
    <!--form to take action and priority-->
     <form class = "getInformation" method = "POST">
+        <!--meal, hygene and eat-->
+        <p>which meal do you prefer?</p>
+        <input type ="radio" name = "meal" value = "breakfast"> Breakfast <br>
+        <input type ="radio" name = "meal" value = "lunch"> Lunch <br>
+        <input type ="radio" name = "meal" value = "dinner"> Dinner <br>
+
+        <p>How much sleep do you prefer a day ( in hours ) ? </p>
+        <input type ="number" name = "sleep" min = "0"><br> 
+
+        <p>How many time do you hygene a day ? (30 minutes per session )</p>
+        <input type ="number" name ="hygene" min = "0"><br>
+
+        <!-- activities and priority-->
+        <p> Please fill out activities</p>
         activities<br>
         <input type = 'text' name ='activities'><br>
         priority<br>
-        <input type = 'text' name ='priority'>
-        (please rate the important of activities from scale 1 - 5)<br>
+        <input type = 'number' name ='priority' min = "1" max = "4"><br>
+        (please rate the important of activities from scale 1 - 4)<br>
         <input type = 'submit' value ='Submit'>
         <a href = "/result" ><input type = 'button' value ='I am done'></a>
     </form>
 
     <!-- button to clear form-->
-    <button class = "try" onclick="resetForm()">Add another activities</button> 
+    <button class = "try" >Add another activities</button> 
 </body>
 </head>

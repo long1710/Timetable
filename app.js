@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 const express = require('express');
 const app = express();
+const timetable = require('./timeTableAlgo');
 var registration = require('./registration');
 app.use(express.urlencoded({extended: true}));
 app.use('/assets', express.static('assets'));
@@ -40,13 +41,14 @@ app.get('/result', function(red, res){
 
 //get the action and priority
 app.post('/process', function(req, res){
-    registration.dbDataTable(con, "Long")//try with one database first
-    registration.dbData(con, "Long", req.body.activities, req.body.priority)
+    registration.dbDataTable(con, "Hao");//TODO: switch HAO to user
+    registration.dbData(con, "Hao", req.body);
 })
 
 //get the username and password
 app.post('/registration', function(req,res){
     console.log(req.body);
     registration.dbAccount(con, req.body.username, req.body.password);
+    console.log(timetable.templateTimetable());//testing json variable
 })
 app.listen(3000);
