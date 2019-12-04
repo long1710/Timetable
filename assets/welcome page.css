@@ -1,0 +1,61 @@
+h1, h2, h4{
+    color: black;
+    font-weight:normal;
+  
+  }
+h1{
+    font-size: 2.5em;
+}
+h2{
+    font-size: 1.8em;
+}
+h4{
+    font-size: 1em;
+}
+.introduction{
+    background-color: rgba(192,192,192, 0.4);
+    height: 30vh;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+.welcome{
+    width: 50vw;
+    position: fixed;
+    bottom: 10vh;
+    left: 0 ;
+ }
+
+body{
+    background-image: url("welcome2.png");
+    background-repeat: no-repeat;
+    background-size:220vh 100vh;
+    font-family: "Raleway", sans-serif;
+  }
+
+p{  
+    height: 5vh;
+    padding: 20px;
+    text-align:center;
+    width: 20vw !important;
+    margin-top: 10px;
+    background-color: rgba(192,192,192, 0.3);
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+
+.right:hover,.left:hover{
+    text-decoration:underline;
+    background-color:white;
+    color:dark;
+    font-weight: bold;
+}
+
+a{
+    text-decoration:none;
+    color:black;
+  }
