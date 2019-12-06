@@ -7,7 +7,8 @@ var registration = require('./registration');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use('/assets', express.static('assets'));
-
+//test case for 1 account, TODO use function to take from multiple account 
+var placebo = [];
 
 //connect to mysql server
 var con = mysql.createConnection({
@@ -33,19 +34,19 @@ app.get('/registration', function(req, res){
 
 //set up the process page
 app.get('/process', function(req, res){
-    res.render('process');
+    res.render('process',{list: placebo});
 })
 
 //set up the result page
 app.get('/result', function(red, res){
-    res.render('result')
+    res.render('result');
 })
 
 //get the action and priority
 app.post('/process', function(req, res){
-    registration.dbDataTable(con, "Hao");//TODO: switch HAO to user
-    registration.dbData(con, "Hao", req.body);
-    res.send("registration complete !");
+    //registration.dbDataTable(con, "Hao");//TODO: switch HAO to user
+    //registration.dbData(con, "Hao", req.body);
+    placebo.push(req.body);
 })
 
 //get the username and password
