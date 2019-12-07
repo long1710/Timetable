@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/assets/nextActivities.js" type = "text/javascript"></script>
+    <script src="/assets/controller.js" type = "text/javascript"></script>
+    <link href = "assets/process.css" type = "text/css" rel = "stylesheet"/>
     <title>process</title>
 <body>
-    <h4>To start generating the perfect time table, please give us some detail about your activities</h4>
-   <!--form to take action and priority-->
-    <form class = "getInformation" method = "POST">
-        <!--meal, hygene and eat-->
+    <div class = "wrap">
+    <h2>Please answer the following questions: </h2>
+   <!--basic activitities-->
+   <form>
+   <div class = "list">
+        <!--meal, hygene and sleep-->
         <p>which meal do you prefer?</p>
         <input type ="radio" name = "meal" value = "breakfast"> Breakfast <br>
         <input type ="radio" name = "meal" value = "lunch"> Lunch <br>
-        <input type ="radio" name = "meal" value = "dinner"> Dinner <br>
-
+        <input type ="radio" name = "meal" value = "dinner"> Dinner <br>    
+    </div>
+    <div class = "list">
         <p>How much sleep do you prefer a day ( in hours ) ? </p>
         <input type ="number" name = "sleep" min = "0"><br> 
-
+    </div>
+    <div class = "list">
         <p>How many time do you hygene a day ? (30 minutes per session )</p>
         <input type ="number" name ="hygene" min = "0"><br>
+    </div>
+   </form>
 
+
+   <!--repeatable activities-->
+   <form class = "information">
+    <div class = "list">
         <!-- activities and priority-->
         <p> Please fill out activities</p>
-        activities<br>
-        <input type = 'text' name ='activities'><br>
-        priority<br>
-        <input type = 'number' name ='priority' min = "1" max = "4"><br>
-        (please rate the important of activities from scale 1 - 4)<br>
+        activities:
+        <input type = 'text' name ='activities' placeholder="class, bike, job etc..."><br>
+        priority:  
+        <input type = 'number' name ='priority' min = "1" max = "4" placeholder=" (please rate the important of activities from scale 1 - 4)"><br>
         <input type = 'submit' value ='Submit'>
         <a href = "/result" ><input type = 'button' value ='I am done'></a>
-
+    </div>
     </form>
-
-    <!-- button to clear form-->
-    <button class = "try" >Add another activities</button> 
-    <!-- past inserted activities and priority-->
+    <button class = "next"> next </button>
+    <!-- (trial)
     <p>This is record of your previous insertion:</p>
-
-
+    <ul>
+    <% for(var i=0; i < list.length; i++) { %>
+        <li>you have activity: <%= list[i].activities %>, with priority of <%= list[i].priority %> </li>
+    <% } %>
+    </ul>
+-->
+    </div>
 </body>
 </head>

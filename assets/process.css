@@ -1,0 +1,44 @@
+body {
+  background-image: url(process.jpg);
+  background-repeat: no-repeat;
+  background-image: cover;  
+}
+
+.wrap{
+    padding: 20px;
+    text-align: left;
+    width: 33vw;
+    height:50vh;
+    background-color: rgba(255,255,255,0.9); 
+    margin-left: 70vh;
+    margin-top: 25vh;
+}
+
+input[type="radio"]{
+    margin-top: 5vh;
+}
+
+input[type="number"], input[type= "text"]{
+    margin-top: 5vh;
+    width: 25vw;
+} 
+input[type="number"]{
+    margin-left: 10px;;
+}
+
+
+.next{
+    position: fixed ;
+    bottom: 25vh;
+    
+}
+
+input[type ="submit"]{
+    position: fixed;
+    bottom: 25vh;
+}
+input[type ="button"]{
+    position: fixed;
+    bottom: 25vh;
+    left: 60vw;
+}

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/assets/controller.js" type = "text/javascript"></script>
+    <link href = "assets/login.css" type = "text/css" rel = "stylesheet"/>
     <title>registration</title>
 <body>
     <!-- add submit type and redirect url-->
-
-    <form method ="POST">
-        username:<br>
-        <input type ='text' name = 'username'><br>
-        password:<br>
-        <input type ='text' name = 'password'><br>
-        <input type ='submit' value = 'Submit'>
+    <form class = 'sign_up'>
+        <h4>Create your own account</h4>
+        <input type = 'text' name = 'username' placeholder="username"><br>
+        <input type = 'password' name = 'password' placeholder="password"><br>
+        <input type = 'password' name = 'password' placeholder="re-enter password"> <br>
+        <input class = "register_button" type = 'submit' value = 'Get start today !'><br>
+        already have an account ? <a href = 'login' >Log in</a>
     </form>
+   
+    
 </body>
 </head>
