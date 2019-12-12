@@ -2,13 +2,15 @@ const mysql = require('mysql');
 const express = require('express');
 const app = express();
 const timetable = require('./timeTableAlgo');
-var registration = require('./registration');
+var database = require('./database');
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use('/assets', express.static('assets'));
 //test case for 1 account, TODO use function to take from multiple account 
-var placebo = [];
+var placebo = timetable.finalTimetable1();
+var login;
+console.log(placebo)
 
 //connect to mysql server
 var con = mysql.createConnection({
@@ -38,25 +40,31 @@ app.get('/process', function(req, res){
 })
 
 app.get('/login', function(req, res){
-    res.render('login.ejs');
+    res.render('login');
 })
 //set up the result page
 app.get('/result', function(red, res){
-    res.render('result');
+    res.render('result',{list:placebo});
 })
 
 //get the action and priority
 app.post('/process', function(req, res){
-    //registration.dbDataTable(con, "Hao");//TODO: switch HAO to user
-    //registration.dbData(con, "Hao", req.body);
+    //database.dbDataTable(con, login);//TODO: switch HAO to user
+   // database.dbData(con, login, req.body);
     placebo.push(req.body);
     console.log(req.body);
 })
 
 //get the username and password
 app.post('/registration', function(req,res){
+     console.log(req.body);
+   //database.dbAccount(con, req.body.username, req.body.password);
+   //console.log(timetable.finalTimetable1());//testing json variable
+})
+
+//check username and password with data 
+app.post('/login', function(req, res){
     console.log(req.body);
-    //registration.dbAccount(con, req.body.username, req.body.password);
-   // console.log(timetable.templateTimetable());//testing json variable
+    console.log(database.dbLogin(con, req.body.username, req.body.password));//TODO: check how to log in
 })
 app.listen(3000);
