@@ -1,0 +1,53 @@
+body{
+    background-image: url(registration.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form{
+    padding: 20px;
+    text-align: left;
+    width: 33vw;
+    height:75vh;
+    background-color: rgba(255,255,255,0.9);
+    margin-left: 70vh;
+    margin-top: 10vh;
+}
+h4{
+    font-size: 2em;
+    margin: 10px;
+}
+
+input{
+    width: 30vw;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.login_button, .register_button{
+    background-color:rgba(190, 144, 212,1);
+    color:white;  
+    outline:none;
+}
+
+.login_button:active, .register_button:active{
+    
+    outline-color: darkorchid;
+}
+.login_button:hover, .register_button:hover{
+    background-color:rgba(145, 61, 136, 1);
+    cursor: pointer;
+}
+input:focus{
+    outline-color:orange;
+}
+.newToTimetable{
+    margin-top: 20px !important;
+}
+a{
+    text-decoration: underline;
+    color:#00c4cc;
+}
+a:hover{
+    color:rgb(8, 207, 207);
+}
